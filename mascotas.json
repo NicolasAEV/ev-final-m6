@@ -1,0 +1,20 @@
+{
+    "mascotas": [
+        {
+            "id": "5c2f0e",
+            "nombre": "firulais",
+            "propietario": {
+                "run": "1.111.111-1",
+                "nombre": "nicolas"
+            }
+        },
+        {
+            "id": "8a4793",
+            "nombre": "simurdiera",
+            "propietario": {
+                "run": "2.222.222-2",
+                "nombre": "nicolas"
+            }
+        }
+    ]
+}

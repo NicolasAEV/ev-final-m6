@@ -1,0 +1,86 @@
+<section>
+    <h1 class="text-center"> Registro de mascotas</h1>
+    <div class="d-grid">
+       <a href="/formulario" class="btn btn-primary">Ingresar mascota</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Nombre dueño</th>
+                <th scope="col">run dueño</th>
+                <th scope="col">datos</th>
+                <th scope="col">eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each mascotas}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.nombre}}</td>
+                <td>{{this.propietario.nombre}}</td>
+                <td>{{this.propietario.run}}</td>
+                <td><a href="/detalle/{{this.id}}" class="btn btn-primary">Ver más</a></td>
+                <td><a onclick="eliminarMascota('{{this.nombre}}')" class="btn btn-danger eliminar">Eliminar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</section>
+<div>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Eliminar por nombre
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <form id="eliminarMascota">
+                            <div class="mb-3">
+                                <label for="" class="form-label">nombre de mascota</label>
+                                <input type="text" class="form-control" name="mascota" id="mascota"
+                                    placeholder="ingrese nombre mascota" required>
+                                <div>
+                                </div>
+                                <button type="submit" class="btn btn-danger m-3">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Eliminar por run
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <form id="eliminarPorRun">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Eliminar por run propietario</label>
+                                <input type="text" class="form-control" name="run" id="run"
+                                    placeholder="ingrese run propietario" required>
+                                <div>
+                                </div>
+                                <button type="submit" class="btn btn-danger m-3">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
